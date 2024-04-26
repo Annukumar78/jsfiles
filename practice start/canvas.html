@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input  type="file" accept="video/*" id="file"/>
+    <video width="750px" height="500px" controls="controls" id="box" >
+    <button id="button">change</button>
+
+    </video>
+    <canvas id="myCanvas " width="300" height="200" style="border: 2px slid black; ">
+
+    </canvas>
+</body>
+<script>
+   const canvasId =  document.getElementById('myCanvas');
+   var ctx = canvasId.getContext("2d")
+   ctx.fillstyle="green"
+   // create a reactangular 
+   // fillRect()-> this methods are the create rectangulr sav
+   // this is acccept four valus(x, y, width, height)
+   ctx.fillRect(10,10, 200, 100)
+
+   // drow the line to one corner to anothe corner
+   // ctx.moveTo(pass the cordinate x, y ); this methos are the used of the moving the line 
+   //ctx.lineTo(giveb the values of x and y) this method are the droing the line 
+   //ctx.stroke - this method are the used of the darkness of the line
+ 
+   // creating the circle 
+   // first of all giving the begin path
+   //beginPath()
+   //arc(x cordinat of the circul Y cordinat of the circul, radiu value , starting angal, end angal value)
+
+  //color gradian in canvas 
+   var grd = ctx.createLinearGradiant(0,0,200, 0);
+   grd.addColorStop(0,"green");
+   grd.addColorStop(1,"blue");
+   grd.addColorStop('0.5', "red");
+   ctx.strokestyle=gradient;
+   ctx.leneWidth = 5;
+
+   // text dwoing in the canvas 
+   ctx.font="30px Arial";
+   ctx.fillstyle='red'
+   ctx.textAlign='center'
+   ctx.fillText("Hello guys",canvasId.width/2, canvas.height/2);
+
+   // image drow the gradiant
+   //used the drowImage method()
+    window.onload(){
+        const canvasId =  document.getElementById('myCanvas');
+        var ctx = canvasId.getContext("2d")
+        const image = document.getElementById('image');
+        ctx.drowImage(image,0,0,width, height)
+    };
+
+    
+    //File reader() -> this is a method to read the file of any location // and privew the brower of any location
+     var btn =  document.getElementById('file');
+
+     btn.onchange = function(){
+        var reader = new FileReader();
+        reader.readAsDataURL(btn.files[0]);
+
+        reader.onload = function(){
+          var file_name = reader.result;// its give the url of the file 
+          var video = document.getElementById('box');
+          video.src = file_name; 
+        }
+     }
+      
+
+     // date methods in javaScript
+       let myDate = new Date(); // it is create the date object
+       console.log(myDate.toString())
+       console.log(myDate.toISOString())
+       console.log(myDate.toDateString())
+       console.log(myDate.toJSON())
+       console.log(myDate.toLocaleString())
+
+
+
+       let myTimeStamp = new Date.now() // this method are give the milisecod time 
+       console.log(myTimeStamp)
+       console.log(myTimeStamp.getTime());
+
+       newDate.toLocaleString('default', {})
+
+       // Events in javaScript 
+       // this is the first method
+     document.getElementById('button').addEventListener('click', function(){
+          alert("hello dear")
+     }, false)
+ 
+     // this is the second method 
+     const Events = document.getElementById('button');
+      Events.addEventListener('click', function(){
+        alert('this is your key')
+      })
+
+      // third method to write the events
+      document.getElementById('button').onclick = function(){
+        alert('this is your car')
+      }
+      // events propogation 
+      //1. events bubling
+      //2. events capturing 
+
+
+      //jsPDF laybray
+
+     // document.body.appendChild('div') 
+
+
+ </script>
+
+</html>

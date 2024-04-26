@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Amazing image </h2>
+    <div>
+        <ul id="image">  
+           <li><imag wirth="200px" id="river" src="https://www.pexels.com/photo/grand-central-station-in-new-york-11292498/"</li>
+           <li><imag wirth="200px" id="ayush" src="https://www.pexels.com/photo/grand-central-station-in-new-york-11292498/"</li>
+           <li><imag wirth="200px" id="kumar" src="https://www.pexels.com/photo/grand-central-station-in-new-york-11292498/"</li>
+           <li><imag wirth="200px" id="sain" src="https://www.pexels.com/photo/grand-central-station-in-new-york-11292498/"</li>
+
+        </ul>
+    </div>
+    
+</body>
+<script>
+  /* document.getElementById('river').onClick = fuction(){
+    alert("oul clicked")
+   }*/
+   //
+    document.getElementById('#river').addEventListener('click', function(e){
+        alert('oul clicked agen')
+    })
+
+    document.getElementById('#river').addEventListener('click', function(e){
+        console.log("owl clicked")
+    })
+
+    document.getElementById('ayush').addEventListener('click', function(){
+        e.preventDefult();
+        console.log("google clicked")
+    }, false)
+
+    document.querySelector('#images').addEventListener
+    ('click', function(e){
+       console.log(e.target.tagName);
+       if(e.target.tagName === 'img'){
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+       }
+      
+    })
+
+// capturing -- outside to inside is colled capturing
+// bubling -- inside to outside is colled bubling 
+</script>
+</html>

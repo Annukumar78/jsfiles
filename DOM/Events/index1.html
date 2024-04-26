@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Chai or code </h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout
+    //setInterval
+
+    // first approch 
+    setTimeout(function(){
+        concole.log("Annu")
+    },2000)
+
+// second approch to write interval code
+
+const sayHi = function(){
+    console.log("aadi");
+}
+setTimeout(sayHi,3000)
+
+//-----------------------------------
+
+setInterval(function(){
+     console.log("annu");
+},2000)
+
+//-------------- project -------------------//
+
+const randomColor = function(){
+    const hex = "0123456789ABCDEF";
+    let color ="#";
+    for(int i=0; i<n; i++){
+   color += hex[math.floor(math.random() * 16)]
+    }
+    return color;
+};
+let intervalId;
+const startChangeColor = function(){
+  interval = setInterval(changeBgColor,2000)
+  function changeBgColor(){
+    document.body.style.backgroundColor = randomColor();
+  } 
+}
+
+
+const stopChangeColor = function(){
+   clearInterval(intervalId);
+   intervalId = null;
+}
+
+document.querySelector('#start').addEventListener('click',startChangeColor);
+document.querySelector('#stop').addEventListener('click',stopChangeColor);
+
+console.log()
+
+//----------------Next projects----------------//
+const insert = document.getElementById('insert')
+window.addEventListener('keydown', (e)=>{
+    insert.innerHTML=`
+    <div class='color'>
+        <table>
+            <tr>
+                <th>key</th>
+                <th>value</th>
+                <th>Code</th>
+            </tr>
+            <tr>
+                <td>${e.key}</td>
+                <td>${e.value}</td>
+                <td>${e.Code}</td>
+            </tr>
+        </table>
+    `
+})
+</script>
+</html>

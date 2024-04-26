@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    // classed based getter and setter
+    class User{
+        constructor(){
+            this._email = email;
+            this._password = password;
+        }
+
+        get email(){
+            return this._email.toUpperCase()
+        }
+
+       set email(value){
+              this.email = value
+       }
+    }
+    // this is function base getter and setter
+    function User(email, password){
+         this._email = email;
+         this._password = password;
+    
+    Object.defineProperty(this, 'email' ,{
+          get: function(){
+            return this._email.toUpperCase()
+          },
+          set: function(value){
+            this._email = value
+          }
+    })
+
+    }
+
+    // careting object getter and setter
+
+    const User = {
+        _email : '@gamil.com',
+        _password: '44343434',
+
+        get: function(){
+            return this._email.toUpperCase()
+        },
+
+        set: function(value){
+            this._email = value;
+        }
+    }
+
+    const tea = Object.create(User)
+    console.log(tea.email);
+
+
+</script>
+</html>
